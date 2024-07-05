@@ -15,12 +15,12 @@ public struct Triangle: Shape {
     let cornerRadius: CGFloat
     let corners: [TriangleCorners]
     
-    init(cornerRadius: CGFloat = 0, on corners: TriangleCorners...) {
+    public init(cornerRadius: CGFloat = 0, on corners: TriangleCorners...) {
         self.cornerRadius = cornerRadius
         self.corners = corners
     }
     
-    init(cornerRadius: CGFloat = 0) {
+    public init(cornerRadius: CGFloat = 0) {
         self.cornerRadius = cornerRadius
         self.corners = [TriangleCorners.all]
     }
