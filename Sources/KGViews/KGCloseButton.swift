@@ -10,7 +10,7 @@ import SwiftUI
 public extension View {
     
     /// Easy close button overlay, with an optional closure action.
-    public func closeButton(
+    func closeButton(
         alignment: Alignment = .topTrailing,
         iconName: String = "xmark",
         withBackground: Bool = true,
@@ -24,7 +24,7 @@ public extension View {
 }
 
 public struct CloseButton: View {
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) var dismiss
     var iconName: String = "xmark"
     var withBackground: Bool = true
     var action: (()->())? = nil
