@@ -17,17 +17,24 @@ public extension View {
         action: (()->())? = nil
     ) -> some View {
         self.overlay(alignment: alignment) {
-            CloseButton(iconName: iconName, action: action)
+            CloseButton(iconName: iconName, withBackground: withBackground, action: action)
         }
     }
     
 }
 
 public struct CloseButton: View {
-    @Environment(\.dismiss) var dismiss
     var iconName: String = "xmark"
     var withBackground: Bool = true
     var action: (()->())? = nil
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    public init(iconName: String, withBackground: Bool = true, action: (()->Void)? = nil) {
+        self.iconName = iconName
+        self.withBackground = withBackground
+        self.action = action
+    }
     
     public var body: some View {
         Button {
