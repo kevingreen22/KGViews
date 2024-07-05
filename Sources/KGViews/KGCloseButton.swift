@@ -30,7 +30,7 @@ public struct CloseButton: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    public init(iconName: String, withBackground: Bool = true, action: (()->Void)? = nil) {
+    public init(iconName: String = "xmark", withBackground: Bool = true, action: (()->Void)? = nil) {
         self.iconName = iconName
         self.withBackground = withBackground
         self.action = action
