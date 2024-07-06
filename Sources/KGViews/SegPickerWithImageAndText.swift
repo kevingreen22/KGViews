@@ -1,5 +1,5 @@
 //
-//  KGSegPickerWithImageAndText.swift
+//  SegPickerWithImageAndText.swift
 //
 //  Created by Kevin Green on 8/19/22.
 //
@@ -18,7 +18,7 @@ public struct Segment: Identifiable {
     }
 }
 
-public struct KGSegPickerWithImageAndText: View {
+public struct SegPickerWithImageAndText: View {
     var segments: [Segment]
     @Binding var selected: Int
     
@@ -68,6 +68,6 @@ struct SegPickerWithImageAndText_Previews: PreviewProvider {
     static var seg2 = Segment(title:  Text("Other"), image:  Image(systemName: "ellipsis.circle"), id: 1)
     
     static var previews: some View {
-        KGSegPickerWithImageAndText(segments: [seg1, seg2], selected: .constant(1))
+        SegPickerWithImageAndText(segments: [seg1, seg2], selected: .constant(1))
     }
 }

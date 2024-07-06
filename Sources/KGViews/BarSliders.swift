@@ -1,5 +1,5 @@
 //
-//  KGBarSliders.swift
+//  BarSliders.swift
 //
 //  Created by Kevin Green on 6/1/22.
 //

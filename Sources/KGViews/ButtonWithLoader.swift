@@ -1,5 +1,5 @@
 //
-//  KGButton.swift
+//  ButtonWithLoader.swift
 //
 //  Created by Kevin Green on 10/27/22.
 //

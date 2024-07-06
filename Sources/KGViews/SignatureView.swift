@@ -1,14 +1,13 @@
 //
-//  KGSignatureView.swift
+//  SignatureView.swift
 //
 //  Created by Kevin Green on 8/13/22.
 //
 
 import SwiftUI
 import CoreGraphics
-import UIKit
 
-public struct KGSignatureView: View {
+public struct SignatureView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State var lineColor: Color = .black
@@ -282,9 +281,9 @@ struct DrawShape: Shape {
 
 
 // MARK: Extensions
-extension KGSignatureView {
+public extension SignatureView {
     
-    public func clear(action: (() -> Void)? = nil) {
+    func clear(action: (() -> Void)? = nil) {
         drawing = DrawingPath()
         image = UIImage()
         isImageSet = false
@@ -327,7 +326,7 @@ private extension Color {
 struct SignatureView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            KGSignatureView(disableUserInteraction: .constant(false), showColorPicker: true, onClear: nil, onEnded: { image in
+            SignatureView(disableUserInteraction: .constant(false), showColorPicker: true, onClear: nil, onEnded: { image in
                 // handle image here
             })
         }

@@ -1,5 +1,5 @@
 //
-//  KGSearchBar.swift
+//  SearchBar.swift
 //
 //  Created by Kevin Green on 11/16/22.
 //
@@ -8,7 +8,7 @@ import SwiftUI
 
 /// A search bar with cancel button and x button to clear search text. Works just like Apple standard search bar.
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct KGSearchBar: View {
+public struct SearchBar: View {
     @Binding var searchText: String
     @Binding var searching: Bool
     var cancelButtonColor: Color
@@ -114,7 +114,7 @@ private struct SearchBar_Preview: PreviewProvider {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    KGSearchBar(searchText: searchTxt, searching: isSearching)
+                    SearchBar(searchText: searchTxt, searching: isSearching)
                         .padding(.horizontal)
                 }
             }

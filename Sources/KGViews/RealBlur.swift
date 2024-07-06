@@ -1,5 +1,5 @@
 //
-//  KGRealBlur.swift
+//  RealBlur.swift
 //
 //  Created by Kevin Green on 8/20/22.
 //
@@ -7,7 +7,7 @@
 import SwiftUI
 import UIKit
 
-public struct KGRealBlur: View {
+public struct RealBlur: View {
     var style: UIBlurEffect.Style = .regular
     var onTap: (() -> ())? = nil
     

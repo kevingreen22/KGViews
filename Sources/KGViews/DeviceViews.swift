@@ -1,12 +1,12 @@
 //
-//  KGDeviceViews.swift
+//  DeviceViews.swift
 //
 //  Created by Kevin Green on 9/8/22.
 //
 
 import SwiftUI
 
-public struct KGDeviceViews {
+public struct DeviceViews {
     
     /// A visual representation of an iPhone with Dynamic Island.
     static func iPhoneIsland(strokeColor: Color = .primary, fillColor: Color = .clear) -> some View {
@@ -125,13 +125,13 @@ public struct KGDeviceViews {
 // MARK: Preview
 fileprivate struct TestView: View {
     var body: some View {
-        KGDeviceViews.iPhoneHomeButton()
-        KGDeviceViews.iPhoneNotch()
-        KGDeviceViews.iPhoneIsland()
+        DeviceViews.iPhoneHomeButton()
+        DeviceViews.iPhoneNotch()
+        DeviceViews.iPhoneIsland()
     }
 }
 
-fileprivate struct KGDeviceViews_Preview: PreviewProvider {
+fileprivate struct DeviceViews_Preview: PreviewProvider {
     static var previews: some View {
         TestView()
     }

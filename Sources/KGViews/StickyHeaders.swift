@@ -1,5 +1,5 @@
 //
-//  KGStickyHeaders.swift
+//  StickyHeaders.swift
 //
 //  Created by Kevin Green on 10/13/22.
 //
@@ -7,7 +7,7 @@
 import SwiftUI
 
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct KGStickyHeader<Content>: View where Content: View {
+public struct StickyHeader<Content>: View where Content: View {
     public var content: Content
     
     public init(@ViewBuilder _ content: () -> Content) {
@@ -34,7 +34,7 @@ public struct KGStickyHeader<Content>: View where Content: View {
 
 
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct KGStickyHeader2<ContentA, ContentB>: View where ContentA: View, ContentB: View {
+public struct StickyHeader2<ContentA, ContentB>: View where ContentA: View, ContentB: View {
     public var contentA: ContentA
     public var contentB: ContentB
     
@@ -64,10 +64,10 @@ public struct KGStickyHeader2<ContentA, ContentB>: View where ContentA: View, Co
 
 
 // MARK: Preview
-fileprivate struct KGStickyHeader_Preview: PreviewProvider {
+fileprivate struct StickyHeader_Preview: PreviewProvider {
     static var previews: some View {
         ScrollView(showsIndicators: false) {
-            KGStickyHeader {
+            StickyHeader {
                 Image(systemName: "person")
                     .resizable()
                     .scaledToFill()

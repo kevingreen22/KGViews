@@ -1,12 +1,12 @@
 //
-//  KGAsyncImage.swift
+//  SmartAsyncImage.swift
 //
 //  Created by Kevin Green on 9/15/22.
 //
 
 import SwiftUI
 
-public struct KGAsyncImage: View {
+public struct SmartAsyncImage: View {
     var contentMode: ContentMode
     var urlString: String?
     var imageData: Data?
@@ -74,7 +74,7 @@ public struct KGAsyncImage: View {
 
 fileprivate struct Test: View {
     var body: some View {
-        KGAsyncImage(urlString: "https://picsum.photos/200")
+        SmartAsyncImage(urlString: "https://picsum.photos/200")
     }
 }
 

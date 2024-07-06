@@ -1,5 +1,5 @@
 //
-//  KGTextFields.swift
+//  TextFields.swift
 //
 //  Created by Kevin Green on 8/18/22.
 //
@@ -150,7 +150,7 @@ public enum ValidatorStyle {
 }
 
 
-fileprivate extension String {
+public extension String {
     
     /// Validates a phone number.
     ///
@@ -306,7 +306,7 @@ fileprivate extension String {
 
 
 // MARK: Preview
-struct KGTextFieldsTest_Previews: PreviewProvider {
+struct TextFieldsTest_Previews: PreviewProvider {
     @State static var text: String = ""
     @State static var currencyValue: Double = 0.0
     

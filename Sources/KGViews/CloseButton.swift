@@ -1,5 +1,5 @@
 //
-//  KGCloseButton.swift
+//  CloseButton.swift
 //
 //
 //  Created by Kevin Green on 1/1/24.
