@@ -1,5 +1,5 @@
 //
-//  StaticViewWithKeyboard.swift
+//  Randoms.swift
 //
 
 import SwiftUI
@@ -16,18 +16,20 @@ public extension View {
         .ignoresSafeArea(.keyboard)
     }
     
-    ///  Dismisses the keyboard
-    func dismissKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    
+    /// A quicker easier way to border a view via a shape overlay.
+    func bordered<S:Shape>(shape: S, color: Color, lineWidth: CGFloat = 1) -> some View {
+        self.overlay {
+            shape.stroke(color, lineWidth: lineWidth)
+        }
     }
-}
-
-
-
-//
-
-
-public extension View {
+    
+    /// Adds a shaped border to the view.
+    func addBorder<S: ShapeStyle>(_ content: S, lineWidth: CGFloat = 1, cornerRadius: CGFloat = 0) -> some View {
+        let roundedRect = RoundedRectangle(cornerRadius: cornerRadius)
+        return clipShape(roundedRect)
+            .overlay(roundedRect.strokeBorder(content, lineWidth: lineWidth))
+    }
     
 }
-#endif
+

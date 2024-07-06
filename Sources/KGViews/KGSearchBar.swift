@@ -5,7 +5,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 /// A search bar with cancel button and x button to clear search text. Works just like Apple standard search bar.
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
