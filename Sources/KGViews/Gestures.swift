@@ -7,11 +7,11 @@
 import SwiftUI
 
 /// An implementation with a smoother feeling drag.
-struct SmoothDrag: Gesture {
+public struct SmoothDrag: Gesture {
     @Binding var location: CGSize
     @GestureState private var startLocation: CGSize? = nil
     
-    var body: some Gesture {
+    public var body: some Gesture {
         simpleDrag
     }
     

@@ -5,7 +5,7 @@
 //
 import SwiftUI
 
-struct ButtonWithLoader<Label: View>: View {
+public struct ButtonWithLoader<Label: View>: View {
     var action: ()async->Void
     var buttonRole: ButtonRole?
     var actionOptions = Set(ActionOptions.allCases)
@@ -14,7 +14,7 @@ struct ButtonWithLoader<Label: View>: View {
     @State private var showProgressView: Bool = false
     @State private var isDisabled: Bool = false
     
-    var body: some View {
+    public var body: some View {
         Button(role: buttonRole) {
             if actionOptions.contains(.disableButton) {
                 isDisabled = true
@@ -67,7 +67,7 @@ struct ButtonWithLoader<Label: View>: View {
 //    }
 //}
 
-extension ButtonWithLoader {
+public extension ButtonWithLoader {
     enum ActionOptions: CaseIterable {
         case disableButton
         case showProgressView
@@ -75,7 +75,7 @@ extension ButtonWithLoader {
 }
 
 
-extension Button {
+public extension Button {
     
     /// Adds a progress loader on top of the button.
     func withLoader(_ showLoader: Binding<Bool>) -> some View {

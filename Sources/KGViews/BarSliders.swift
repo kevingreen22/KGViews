@@ -9,14 +9,14 @@ import SwiftUI
 /// A vertical thicker finger slider.
 /// Value must be between minValue and maxValue.
 /// minValue defaults to 0, maxValue defaults to 1.
-struct VSlider: View {
+public struct VSlider: View {
     @Binding var value: Float
     var minValue: CGFloat = 0
     var maxValue: CGFloat = 1
     var backgroundColor: Color = .gray.opacity(0.8)
     var accentColor: Color = .blue.opacity(0.8)
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .bottom) {
                 Rectangle()
@@ -43,14 +43,14 @@ struct VSlider: View {
 /// A vertical thicker finger slider.
 /// Value must be between minValue and maxValue.
 /// minValue defaults to 0, maxValue defaults to 1.
-struct HSlider: View {
+public struct HSlider: View {
     @Binding var value: Float
     var minValue: Float = 0
     var maxValue: Float = 1
     var backgroundColor: Color = .gray.opacity(0.8)
     var accentColor: Color = .blue.opacity(0.8)
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .leading) {
                 Rectangle()

@@ -80,9 +80,9 @@ public struct KGPasswordTextFieldStyle<S: Shape>: TextFieldStyle {
 
 
 
-extension TextField {
+public extension TextField {
     
-    public func visualValidate(value: String, validator: ValidatorStyle, alignment: Alignment = .bottom, sizeFactor: CGFloat = 0.10) -> some View {
+    func visualValidate(value: String, validator: ValidatorStyle, alignment: Alignment = .bottom, sizeFactor: CGFloat = 0.10) -> some View {
         GeometryReader { proxy in
             switch validator {
             case .blank:
