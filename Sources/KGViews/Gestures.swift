@@ -15,7 +15,7 @@ public struct SmoothDrag: Gesture {
         simpleDrag
     }
     
-    fileprivate var simpleDrag: some Gesture {
+    var simpleDrag: some Gesture {
         DragGesture()
             .onChanged { value in
                 var newLocation = startLocation ?? location
