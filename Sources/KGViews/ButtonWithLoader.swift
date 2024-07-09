@@ -14,6 +14,19 @@ public struct ButtonWithLoader<Label: View>: View {
     @State private var showProgressView: Bool = false
     @State private var isDisabled: Bool = false
     
+    public init(action: @escaping ()async->Void,
+                buttonRole: ButtonRole? = nil,
+                actionOptions: Swift.Set<ActionOptions> = Set(ActionOptions.allCases),
+                @ViewBuilder label: @escaping ()->Label
+    ) {
+        self.action = action
+        self.buttonRole = buttonRole
+        self.actionOptions = actionOptions
+        self.label = label
+        self.showProgressView = showProgressView
+        self.isDisabled = isDisabled
+    }
+    
     public var body: some View {
         Button(role: buttonRole) {
             if actionOptions.contains(.disableButton) {
@@ -49,23 +62,6 @@ public struct ButtonWithLoader<Label: View>: View {
     }
 }
 
-//extension ButtonWithLoader where Label == Text {
-//    init(_ label: String,
-//         actionOptions: Set<ActionOptions> = Set(ActionOptions.allCases),
-//         action: @escaping () async -> Void) {
-//        self.init(action: action) {
-//            Text(label)
-//        }
-//    }
-//}
-//
-//extension ButtonWithLoader where Label == Image {
-//    init(systemImageName: String, actionOptions: Set<ActionOptions> = Set(ActionOptions.allCases), action: @escaping () async -> Void) {
-//        self.init(action: action) {
-//            Image(systemName: systemImageName)
-//        }
-//    }
-//}
 
 public extension ButtonWithLoader {
     enum ActionOptions: CaseIterable {
@@ -97,7 +93,11 @@ public struct KGScaledButtonStyle: ButtonStyle {
     }
 }
 
-
+public extension ButtonStyle where Self == KGScaledButtonStyle {
+    static var scaled: KGScaledButtonStyle {
+        return KGScaledButtonStyle()
+    }
+}
 
 
 
@@ -108,26 +108,51 @@ struct LoadingButtonDemo: View {
     
     var body: some View {
         VStack {
-            Button {
-                withAnimation { showLoader.toggle() }
-                DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            VStack {
+                Text("Button Loaders").font(.title)
+                
+                Button {
                     withAnimation { showLoader.toggle() }
+                    DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                        withAnimation { showLoader.toggle() }
+                    }
+                } label: {
+                    Text("Button using modifier")
                 }
-            } label: {
-                Text("Button using modifier")
+                .withLoader($showLoader)
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                
+                
+                ButtonWithLoader {
+                    try? await Task.sleep(nanoseconds: 2_000_000_000)
+                } label: {
+                    Label("Button as View", systemImage: "person.fill")
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                
             }
-            .withLoader($showLoader)
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
             
+            Spacer()
             
-            ButtonWithLoader {
-                try? await Task.sleep(nanoseconds: 2_000_000_000)
-            } label: {
-                Label("Button as View", systemImage: "person.fill")
+            VStack {
+                Text("Button Styles").font(.title)
+                
+                Button {
+                    //
+                } label: {
+                    Text("Button with ScaledButtonStyle")
+                        .padding()
+                        .foregroundStyle(Color.white)
+                        .background(Color.blue.clipShape(RoundedRectangle(cornerRadius: 8)))
+                }
+                .buttonStyle(KGScaledButtonStyle())
+                .controlSize(.large)
+                
             }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
+            
+            Spacer()
         }
     }
 }
