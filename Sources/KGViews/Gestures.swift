@@ -11,6 +11,10 @@ public struct SmoothDrag: Gesture {
     @Binding var location: CGSize
     @GestureState private var startLocation: CGSize? = nil
     
+    public init(location: Binding<CGSize>) {
+        _location = location
+    }
+    
     public var body: some Gesture {
         simpleDrag
     }
