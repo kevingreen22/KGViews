@@ -13,17 +13,25 @@ public struct VSlider: View {
     @Binding var value: Float
     var minValue: CGFloat = 0
     var maxValue: CGFloat = 1
-    var backgroundColor: Color = .gray.opacity(0.8)
-    var accentColor: Color = .blue.opacity(0.8)
+    var backgroundColor: Color = .gray
+    var accentColor: Color = .blue
+    
+    public init(value: Binding<Float>, minValue: CGFloat = 0, maxValue: CGFloat = 1, backgroundColor: Color = .gray, accentColor: Color = .gray) {
+        _value = value
+        self.minValue = minValue
+        self.maxValue = maxValue
+        self.backgroundColor = backgroundColor
+        self.accentColor = accentColor
+    }
     
     public var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .bottom) {
                 Rectangle()
-                    .foregroundColor(backgroundColor)
+                    .foregroundColor(backgroundColor.opacity(0.8))
                 
                 Rectangle()
-                    .foregroundColor(accentColor)
+                    .foregroundColor(accentColor.opacity(0.8))
                     .frame(height: proxy.size.height * CGFloat(self.value) / maxValue)
             }
             .cornerRadius(20)
@@ -47,17 +55,25 @@ public struct HSlider: View {
     @Binding var value: Float
     var minValue: Float = 0
     var maxValue: Float = 1
-    var backgroundColor: Color = .gray.opacity(0.8)
-    var accentColor: Color = .blue.opacity(0.8)
+    var backgroundColor: Color = .gray
+    var accentColor: Color = .blue
+    
+    public init(value: Binding<Float>, minValue: Float = 0, maxValue: Float = 1, backgroundColor: Color = .gray, accentColor: Color = .blue) {
+        _value = value
+        self.minValue = minValue
+        self.maxValue = maxValue
+        self.backgroundColor = backgroundColor
+        self.accentColor = accentColor
+    }
     
     public var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .leading) {
                 Rectangle()
-                    .foregroundColor(backgroundColor)
+                    .foregroundColor(backgroundColor.opacity(0.8))
                 
                 Rectangle()
-                    .foregroundColor(accentColor)
+                    .foregroundColor(accentColor.opacity(0.8))
                     .frame(width: proxy.size.width * CGFloat(self.value) / CGFloat(maxValue))
             }
             .cornerRadius(20)
@@ -79,17 +95,23 @@ fileprivate struct Preview: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            
             VSlider(value: $valueV, minValue: 0, maxValue: 1)
                 .frame(width: 80, height: 200)
             
-            Text("Vert. - \(valueV)")
+            Text("Vertical - \(valueV)")
                 .font(.headline)
+            
+            Spacer()
             
             HSlider(value: $valueH, minValue: 0, maxValue: 1)
                 .frame(width: 360, height: 80)
             
-            Text("Hor. - \(valueH)")
+            Text("Horizontal - \(valueH)")
                 .font(.headline)
+            
+            Spacer()
         }
     }
 }
