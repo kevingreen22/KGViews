@@ -16,7 +16,7 @@ public struct VSlider: View {
     var backgroundColor: Color = .gray
     var accentColor: Color = .blue
     
-    public init(value: Binding<Float>, minValue: CGFloat = 0, maxValue: CGFloat = 1, backgroundColor: Color = .gray, accentColor: Color = .gray) {
+    public init(value: Binding<Float>, minValue: CGFloat = 0, maxValue: CGFloat = 1, backgroundColor: Color = .gray, accentColor: Color = .blue) {
         _value = value
         self.minValue = minValue
         self.maxValue = maxValue
