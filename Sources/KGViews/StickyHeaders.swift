@@ -96,6 +96,14 @@ fileprivate struct StickyHeader_Demo: PreviewProvider {
 
 
 
+
+
+
+
+
+
+
+
 // This is used for the image resource within the package.
 extension Image {
     init(packageResource name: String, ofType type: String) {

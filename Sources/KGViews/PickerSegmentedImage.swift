@@ -62,7 +62,7 @@ public struct PickerSegmentedImage: View {
 
 
 // MARK: Picker Segmented Image Demo
-fileprivate struct PickerSegmentedImage_Demo: View {
+fileprivate struct PickerSegmentedImage_DemoView: View {
     @State var selected = 0
     var body: some View {
         let seg1 = Segment(title:  Text("Person"), image:  Image(systemName: "person"), id: 0)
@@ -72,7 +72,13 @@ fileprivate struct PickerSegmentedImage_Demo: View {
     }
 }
 
+fileprivate struct PickerSegmentedImage_Demo: PreviewProvider {
+    static var previews: some View {
+        PickerSegmentedImage_DemoView()
+    }
+}
+
 #Preview {
-    PickerSegmentedImage_Demo()
+    PickerSegmentedImage_DemoView()
 }
 
