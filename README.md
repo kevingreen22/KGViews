@@ -108,7 +108,7 @@ Text("Close button")
 
 
 ### Image with Default
-![Image with Default Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/image_with_default.png)
+<img src=<'https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/image_with_default.png' height="275">
 
 #### Example
 
