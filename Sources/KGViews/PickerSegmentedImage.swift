@@ -18,13 +18,15 @@ public struct Segment: Identifiable {
     }
 }
 
-public struct SegPickerWithImageAndText: View {
-    var segments: [Segment]
+/// A simplistic implementation of a Segmented Picker that allows for images and text in the segment.
+public struct PickerSegmentedImage: View {
     @Binding var selected: Int
+    var segments: [Segment]
+
     
-    public init(segments: [Segment], selected: Binding<Int>) {
-        self.segments = segments
+    public init(selected: Binding<Int>, segments: [Segment]) {
         _selected = selected
+        self.segments = segments
     }
     
     public var body: some View {
@@ -59,15 +61,18 @@ public struct SegPickerWithImageAndText: View {
 }
 
 
-
-
-
 // MARK: Preview
-struct SegPickerWithImageAndText_Previews: PreviewProvider {
-    static var seg1 = Segment(title:  Text("Person"), image:  Image(systemName: "person"), id: 0)
-    static var seg2 = Segment(title:  Text("Other"), image:  Image(systemName: "ellipsis.circle"), id: 1)
-    
-    static var previews: some View {
-        SegPickerWithImageAndText(segments: [seg1, seg2], selected: .constant(1))
+fileprivate struct PickerSegmentedImage_Demo: View {
+    @State var selected = 0
+    var body: some View {
+        let seg1 = Segment(title:  Text("Person"), image:  Image(systemName: "person"), id: 0)
+        let seg2 = Segment(title:  Text("Other"), image:  Image(systemName: "ellipsis.circle"), id: 1)
+        
+        return PickerSegmentedImage(selected: $selected, segments: [seg1, seg2])
     }
 }
+
+#Preview {
+    PickerSegmentedImage_Demo()
+}
+
