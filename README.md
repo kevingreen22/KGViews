@@ -1,5 +1,3 @@
-## Badges
-
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
@@ -53,7 +51,7 @@ import KGViews
 
 
 ### Bar Sliders
-![Sliders Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe-resources/bar_sliders.gif)
+![Sliders Screenshot](https://github.com/kevingreen22/KGViews/tree//developer/readMe-resources/bar_sliders.gif)
 #### Example
 
 ```swift
