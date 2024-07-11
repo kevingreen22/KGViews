@@ -88,8 +88,8 @@ public struct HSlider: View {
 }
 
 
-
-fileprivate struct Preview: View {
+// MARK: Bar Sliders Demo
+fileprivate struct BarSliders_Demo: View {
     @State var valueV: Float = 0.5
     @State var valueH: Float = 0.5
     
@@ -117,6 +117,5 @@ fileprivate struct Preview: View {
 }
 
 #Preview {
-    Preview()
-        .padding()
+    BarSliders_Demo().padding()
 }

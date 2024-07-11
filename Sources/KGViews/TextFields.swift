@@ -40,6 +40,7 @@ public struct KGTextFieldStyle<S: Shape>: TextFieldStyle {
     }
 }
 
+
 public struct KGPasswordTextFieldStyle<S: Shape>: TextFieldStyle {
     var placeholder: String
     @Binding var text: String
@@ -77,7 +78,6 @@ public struct KGPasswordTextFieldStyle<S: Shape>: TextFieldStyle {
         .background(shape.fill(backgroundColor))
     }
 }
-
 
 
 public extension TextField {
@@ -303,14 +303,12 @@ public extension String {
 }
 
 
-
-
-// MARK: Preview
-struct TextFieldsTest_Previews: PreviewProvider {
-    @State static var text: String = ""
-    @State static var currencyValue: Double = 0.0
+// MARK: Text Fields Demo
+fileprivate struct TextFields_DemoView: View {
+    @State var text: String = ""
+    @State var currencyValue: Double = 0.0
     
-    static var previews: some View {
+    var body: some View {
         ZStack {
             Color.blue.ignoresSafeArea()
             VStack {
@@ -337,4 +335,14 @@ struct TextFieldsTest_Previews: PreviewProvider {
             }.padding()
         }
     }
+}
+
+fileprivate struct TextFields_Demo: PreviewProvider {
+    static var previews: some View {
+        TextFields_DemoView()
+    }
+}
+
+#Preview {
+    TextFields_DemoView()
 }

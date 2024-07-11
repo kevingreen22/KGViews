@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct StickyHeader<Content>: View where Content: View {
@@ -62,21 +63,46 @@ public struct StickyHeader2<ContentA, ContentB>: View where ContentA: View, Cont
 }
   
 
-
-// MARK: Preview
-fileprivate struct StickyHeader_Preview: PreviewProvider {
+// MARK: Sticky Header Demo
+fileprivate struct StickyHeader_Demo: PreviewProvider {
     static var previews: some View {
         ScrollView(showsIndicators: false) {
             StickyHeader {
-                Image(systemName: "person")
+                Image(packageResource: "sticky_header", ofType: ".png")
                     .resizable()
                     .scaledToFill()
-                    .foregroundColor(.green)
             }
-            .frame(height: 300)
+            .frame(height: 100)
         }
         .background {
-            Color.blue.ignoresSafeArea()
+            Color.orange.ignoresSafeArea()
         }
+    }
+}
+
+#Preview {
+    ScrollView(showsIndicators: false) {
+        StickyHeader {
+            Image(packageResource: "sticky_header", ofType: ".png")
+                .resizable()
+                .scaledToFill()
+        }
+        .frame(height: 100)
+    }
+    .background {
+        Color.orange.ignoresSafeArea()
+    }
+}
+
+
+
+// This is used for the image resource within the package.
+extension Image {
+    init(packageResource name: String, ofType type: String) {
+        guard let path = Bundle.module.path(forResource: name, ofType: type), let image = UIImage(contentsOfFile: path) else {
+            self.init(name)
+            return
+        }
+        self.init(uiImage: image)
     }
 }

@@ -32,3 +32,21 @@ public struct SmoothDrag: Gesture {
             }
     }
 }
+
+
+// MARK: Smooth Drag Demo
+fileprivate struct SmoothDrag_Demo: View {
+    @State private var location = CGSize.zero
+    
+    var body: some View {
+        Rectangle()
+            .fill(Color.indigo)
+            .frame(width: 100, height: 100)
+            .offset(location)
+            .gesture(SmoothDrag(location: $location))
+    }
+}
+
+#Preview {
+    SmoothDrag_Demo()
+}

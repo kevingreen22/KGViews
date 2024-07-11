@@ -57,7 +57,18 @@ public struct CloseButton: View {
 }
 
 
-// MARK: Demo
+// MARK: Close Button Demo
+fileprivate struct CloseButton_Demo: PreviewProvider {
+    static var previews: some View {
+        return VStack {
+            Text("Close button")
+        }
+        .frame(width: 300, height: 300)
+        .background { Color.red }
+        .closeButton()
+    }
+}
+
 #Preview {
     return VStack {
         Text("Close button")

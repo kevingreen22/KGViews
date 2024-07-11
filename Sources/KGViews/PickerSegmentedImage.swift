@@ -61,7 +61,7 @@ public struct PickerSegmentedImage: View {
 }
 
 
-// MARK: Preview
+// MARK: Picker Segmented Image Demo
 fileprivate struct PickerSegmentedImage_Demo: View {
     @State var selected = 0
     var body: some View {

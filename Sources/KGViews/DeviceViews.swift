@@ -9,7 +9,7 @@ import SwiftUI
 public struct DeviceViews {
     
     /// A visual representation of an iPhone with Dynamic Island.
-    static func iPhoneIsland(strokeColor: Color = .primary, fillColor: Color = .clear) -> some View {
+    public static func iPhoneIsland(strokeColor: Color = .primary, fillColor: Color = .clear) -> some View {
             ZStack {
                 // iPhone Frame
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
@@ -44,7 +44,7 @@ public struct DeviceViews {
     }
     
     /// A visual representation of an iPhone with face ID notch.
-    static func iPhoneNotch(strokeColor: Color = .primary, fillColor: Color = .clear) -> some View {
+    public static func iPhoneNotch(strokeColor: Color = .primary, fillColor: Color = .clear) -> some View {
             ZStack {
                 //iPhone frame
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
@@ -79,9 +79,8 @@ public struct DeviceViews {
             .frame(width: 150, height: 300)
     }
 
-    
     /// A visual representation of an iPhone with home button.
-    static func iPhoneHomeButton(strokeColor: Color = .primary, fillColor: Color = .clear) -> some View {
+    public static func iPhoneHomeButton(strokeColor: Color = .primary, fillColor: Color = .clear) -> some View {
         
         ZStack {
             // iPhone frame
@@ -120,10 +119,8 @@ public struct DeviceViews {
 }
 
 
-
-
-// MARK: Preview
-fileprivate struct TestView: View {
+// MARK: Device Views Demo
+fileprivate struct DeviceViews_Demo: View {
     var body: some View {
         DeviceViews.iPhoneHomeButton()
         DeviceViews.iPhoneNotch()
@@ -131,8 +128,6 @@ fileprivate struct TestView: View {
     }
 }
 
-fileprivate struct DeviceViews_Preview: PreviewProvider {
-    static var previews: some View {
-        TestView()
-    }
+#Preview {
+    DeviceViews_Demo()
 }

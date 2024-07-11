@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-public enum TriangleCorners: Sendable, CaseIterable {
+public enum TriangleCorners: Sendable, CaseIterable, Animatable {
     case top, bottomLeft, bottomRight, all
 }
 
@@ -51,9 +51,8 @@ public struct Triangle: Shape {
 }
 
 
-
-// MARK: Triangle shape Demo
-private struct Demo: View {
+// MARK: Triangle Shape Demo
+fileprivate struct TriangleShape_DemoView: View {
     @State var selectedCorners = 0
     
     var body: some View {
@@ -64,42 +63,43 @@ private struct Demo: View {
                 Text("Top").tag(2)
                 Text("Left").tag(3)
                 Text("Right").tag(4)
-            }.pickerStyle(.segmented)
+            }
+            .pickerStyle(.segmented)
             Spacer()
             switch selectedCorners {
-            case 0: ExampleTriangle(corners: nil)
-            case 1: ExampleTriangle(corners: .all)
-            case 2: ExampleTriangle(corners: .top)
-            case 3: ExampleTriangle(corners: .bottomLeft)
-            case 4: ExampleTriangle(corners: .bottomRight)
+            case 0: exampleTriangle(corners: nil)
+            case 1: exampleTriangle(corners: .all)
+            case 2: exampleTriangle(corners: .top)
+            case 3: exampleTriangle(corners: .bottomLeft)
+            case 4: exampleTriangle(corners: .bottomRight)
             default: EmptyView()
             }
             Spacer()
         }
-        .animation(.easeInOut(duration: 1.3), value: selectedCorners)
         .padding()
+        .animation(.easeInOut(duration: 1.3), value: selectedCorners)
     }
-}
-
-private struct ExampleTriangle: View {
-    var corners: TriangleCorners? = nil
     
-    var body: some View {
+    fileprivate func exampleTriangle(corners: TriangleCorners? = nil) -> some View {
         if corners == nil {
             Triangle()
                 .fill(Color.indigo)
                 .frame(width: 300, height: 300)
-                .transition(.scale)
         } else {
             Triangle(cornerRadius: 20, on: corners!)
                 .fill(Color.indigo)
                 .frame(width: 300, height: 300)
-                .transition(.identity)
         }
     }
 }
 
+fileprivate struct TriangleShape_Demo: PreviewProvider {
+    static var previews: some View {
+        TriangleShape_DemoView()
+    }
+}
+
 #Preview {
-    Demo()
+    TriangleShape_DemoView()
 }
 
