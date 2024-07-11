@@ -123,7 +123,7 @@ Image(uiimage: nil) <-- Most likely you'll use an optional image here (i.e. UIIm
 
 
 ### Segmented Picker with Images
-![Segmented Picker with Images Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/segmented_with_images.gif)
+![Segmented Picker with Images Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/segmented_with_image.gif)
 
 #### Example
 Shown here in a full struct as to show the state variable and the initialization of the segments.
