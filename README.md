@@ -207,8 +207,7 @@ NavigationView {
 
 | Portrait | Landscape |
 |-|-|
-| ![Signature View Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_portrait.gif) |
-![Signature View Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_landscape.gif) |
+| ![Signature View Portrait Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_portrait.gif) | ![Signature View Landscape Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_landscape.gif) |
 
 #### Example
 The SignatureView can also be embedded into any stack/container.
