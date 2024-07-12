@@ -143,7 +143,6 @@ struct ExampleView: View {
 
 
 ### Real Blur
-<!--![Real Blur Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/real_blur.png){: width="50%"} -->
 <img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/real_blur.png' height="625">
 
 #### Example
@@ -208,7 +207,7 @@ NavigationView {
 
 | Landscape | Portrait |
 |-|-|
-|  ![Signature View Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_landscape.gif) | ![Signature View Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_portrait.gif) |
+| ![Signature View Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_portrait.gif) | <img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_landscape.gif' style=transform:rotate(90deg)> |
 
 #### Example
 The SignatureView can also be embedded into any stack/container.
