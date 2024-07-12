@@ -312,7 +312,7 @@ Just another sticky header image that scales when scrolled.
 
 
 ### Triangle with Rounded Corners
-![Triangle with Rounded Corners Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/triangle_rounded_corners.gif)
+![Triangle with Rounded Corners Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/triangle_rounded_corner.gif)
 
 #### Example
 A triangle shape (missing from SwiftUI's shapes API). Initializers for optional rounded corners, either all or individually. As well as a corner radius.
