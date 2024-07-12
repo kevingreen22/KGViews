@@ -222,7 +222,7 @@ SignatureView(disableUserInteraction: .constant(false), showColorPicker: true, o
 
 
 ### Smart Async Image
-![Smart Async Image Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/smart-async-image.gif)
+![Smart Async Image Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/smart_async_image.gif)
 
 #### Example
 Self explanitory. The url here is just for example sake. It fetches a random photo from an API to show the purpose of the what the view is doing.
