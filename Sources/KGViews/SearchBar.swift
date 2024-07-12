@@ -6,13 +6,13 @@
 
 import SwiftUI
 
-/// A search bar with cancel button and x button to clear search text. Works just like Apple standard search bar.
+/// A search bar with cancel button and "X" button to clear search text. Works just like Apple standard search bar.
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct SearchBar: View {
     @Binding var searchText: String
-    @Binding var searching: Bool
     var cancelButtonColor: Color
     
+    @State private var searching: Bool = false
     @State private var showX = false
     
     @Environment(\.colorScheme) var colorScheme
@@ -20,12 +20,10 @@ public struct SearchBar: View {
     private var lightGrayLight: Color = Color(red: 227/255, green: 230/255, blue: 230/255)
     private var lightGrayDark: Color = Color(red: 37/255, green: 38/255, blue: 38/255)
     
-    public init(searchText: Binding<String>, searching: Binding<Bool>, cancelButtonColor: Color = .blue) {
+    public init(searchText: Binding<String>, cancelButtonColor: Color = .blue) {
         _searchText = searchText
-        _searching = searching
         self.cancelButtonColor = cancelButtonColor
     }
-    
     
     public var body: some View {
             HStack {
@@ -99,28 +97,30 @@ public struct SearchBar: View {
 }
 
 
-
-
-
-// MARK: Preview
-private struct SearchBar_Preview: PreviewProvider {
-    static var searchText = ""
-    static var searching = false
+// MARK: Search Bar Demo
+fileprivate struct SearchBar_DemoView: View {
+    @State private var searchText = ""
     
-    static var previews: some View {
-        let searchTxt: Binding<String> = Binding(get: { self.searchText }, set: { self.searchText = $0 })
-        let isSearching: Binding<Bool> = Binding(get: { self.searching }, set: { self.searching = $0 })
-        
+    var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    SearchBar(searchText: searchTxt, searching: isSearching)
+                    SearchBar(searchText: $searchText)
                         .padding(.horizontal)
                 }
             }
-            
             .navigationTitle("Search")
         }
         .navigationViewStyle(.stack)
     }
+}
+
+fileprivate struct SearchBar_Demo: PreviewProvider {
+    static var previews: some View {
+        SearchBar_DemoView()
+    }
+}
+
+#Preview {
+    SearchBar_DemoView()
 }

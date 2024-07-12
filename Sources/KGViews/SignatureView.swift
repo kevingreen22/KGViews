@@ -7,6 +7,7 @@
 import SwiftUI
 import CoreGraphics
 
+// A basic view for capturing a signature as an image. Use the UIImage contained in the
 public struct SignatureView: View {
     @Environment(\.colorScheme) var colorScheme
     
@@ -279,7 +280,6 @@ struct DrawShape: Shape {
 }
 
 
-
 // MARK: Extensions
 public extension SignatureView {
     
@@ -291,7 +291,6 @@ public extension SignatureView {
     }
     
 }
-
 
 private extension Color {
     var uiColor: UIColor {
@@ -319,16 +318,21 @@ private extension Color {
 }
 
 
-
-
-
-// MARK: Preview
-struct SignatureView_Previews: PreviewProvider {
+// MARK: SignatureView_Demo
+fileprivate struct SignatureView_Demo: PreviewProvider {
     static var previews: some View {
         VStack {
             SignatureView(disableUserInteraction: .constant(false), showColorPicker: true, onClear: nil, onEnded: { image in
                 // handle image here
             })
         }
+    }
+}
+
+#Preview {
+    VStack {
+        SignatureView(disableUserInteraction: .constant(false), showColorPicker: true, onClear: nil, onEnded: { image in
+            // handle image here
+        })
     }
 }

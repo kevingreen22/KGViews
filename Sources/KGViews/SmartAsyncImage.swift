@@ -69,18 +69,13 @@ public struct SmartAsyncImage: View {
 }
 
 
-
-
-
-fileprivate struct Test: View {
-    var body: some View {
+// MARK: Smart Async Image Demo
+fileprivate struct SmartAsyncImage_Demo: PreviewProvider {
+    static var previews: some View {
         SmartAsyncImage(urlString: "https://picsum.photos/200")
     }
 }
 
-fileprivate struct KGAsyncImage_Previews: PreviewProvider {
-    static var previews: some View {
-        Test()
-//            .frame(width: 500, height: 60)
-    }
+#Preview {
+    SmartAsyncImage(urlString: "https://picsum.photos/200")
 }

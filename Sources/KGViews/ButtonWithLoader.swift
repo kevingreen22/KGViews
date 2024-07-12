@@ -100,10 +100,8 @@ public extension ButtonStyle where Self == KGScaledButtonStyle {
 }
 
 
-
-
-
-struct LoadingButtonDemo: View {
+// MARK: LoadingButton and Styles Demo
+fileprivate struct LoadingButton_Demo: View {
     @State private var showLoader = false
     
     var body: some View {
@@ -158,5 +156,5 @@ struct LoadingButtonDemo: View {
 }
 
 #Preview {
-    LoadingButtonDemo()
+    LoadingButton_Demo()
 }

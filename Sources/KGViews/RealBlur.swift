@@ -22,7 +22,6 @@ public struct RealBlur: View {
     }
 }
 
-
 fileprivate struct VisualEffect: UIViewRepresentable {
     var style: UIBlurEffect.Style = .regular
     
@@ -34,4 +33,30 @@ fileprivate struct VisualEffect: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) { }
+}
+
+
+// MARK: Real Blur Demo
+fileprivate struct RealBlur_Demo: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.green.ignoresSafeArea()
+            Image(systemName: "person.fill")
+                .scaleEffect(5)
+            RealBlur(style: .regular)
+                .frame(width: 100, height: 100)
+                .offset(x: 50)
+        }
+    }
+}
+
+#Preview {
+    ZStack {
+        Color.green.ignoresSafeArea()
+        Image(systemName: "person.fill")
+            .scaleEffect(5)
+        RealBlur(style: .regular)
+            .frame(width: 100, height: 100)
+            .offset(x: 50)
+    }
 }
