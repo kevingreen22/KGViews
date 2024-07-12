@@ -234,7 +234,7 @@ SmartAsyncImage(urlString: "https://picsum.photos/200")
 
 
 ### Smooth Drag
-![Smooth Drag Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/smooth-drag.gif)
+![Smooth Drag Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/smooth_drag.gif)
 
 #### Example
 This drag gesture uses the .update method of DragGesture to create a smooth drag feel without a laggy or jumpy effect. Should be accompanied with a state variable & an offset modifier as all gestures need.
@@ -249,7 +249,7 @@ Rectangle()
 
 
 ### Specialty Text Fields
-![Specialty Text Fields Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/text_fields.png)
+<img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/text_fields.png' height="625">
 
 #### Example
 This API contains TextFieldStyles for pure customization, along with a "visual validate" method. This method not only validates the text in the field, but it also visually shows whether-or-not it is a valid-input in real time.
