@@ -143,7 +143,7 @@ struct ExampleView: View {
 
 
 ### Real Blur
-![Real Blur Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/real_blur.png | height=625)
+![Real Blur Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/real_blur.png){: height="50%"}
 
 #### Example
 This example offsets & frames the blur view so it is easier to visualize.
