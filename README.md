@@ -162,7 +162,7 @@ ZStack {
 
 
 ### Rounded Corner
-![Rounded Corner Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/rounded_corner.png)
+<img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/rounded_corner.png' height="625">
 
 #### Example
 Can be used as a modifier or as a view.
