@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "biometrics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kevingreen22/Biometrics.git",
+      "state" : {
+        "revision" : "e1ee4ed5ef437b5f09686de2c730b56f5e96c516",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "hapticmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kevingreen22/HapticManager.git",
+      "state" : {
+        "revision" : "44934b0f35e3f422f374843e3ba2ef7f7cd5d121",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

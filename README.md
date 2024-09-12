@@ -36,6 +36,7 @@ import KGViews
 - [Bar Sliders](#bar-sliders)
 - [Button Loaders & Styles](#button=-loader-and-styles)
 - [Close Button](#close-button)
+- [EnterPinView](#enter-pin-view)
 - [Image with Default](#image-with-default)
 - [Segmented Picker with Images](#segmented=picker-with-images)
 - [Real Blur](#real-blur)
@@ -104,6 +105,16 @@ Text("Close button")
     CloseButton(iconName: "xmark", withBackground: true) {
         // do stuff here.
     }
+```
+
+### EnterPinView
+<img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/enter_pin_view.png' height="625">
+
+#### Example
+A stand alone view that allows for a pin creation and usage before proceding through app navigation. Biometrics and haptics included.
+
+```swift
+EnterPinView(isUnlocked: $isUnlocked, accentColor: .blue)
 ```
 
 
