@@ -26,10 +26,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "KGViews",
-//            dependencies: [
-//                .target(name: "Biometrics")
-//                .target(name: "hapticmanager")
-//            ],
+            dependencies: [
+                .product(name: "Biometrics", package: "Biometrics"),
+                .product(name: "HapticManager", package: "HapticManager")
+            ],
             resources: [.process("Resources")]
         ),
         .testTarget(

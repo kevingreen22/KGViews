@@ -30,7 +30,6 @@ public struct EnterPinView: View {
     @AppStorage("passcode") private var passcode: String = ""
     @AppStorage("isCreatingPasscode") private var isCreatingPasscode: Bool = false
     
-    private var Bio = Biometrics.instance
     private var haptics = HapticManager.instance
     
     public var body: some View {
@@ -40,7 +39,7 @@ public struct EnterPinView: View {
                     if passcode == "" {
                         isCreatingPasscode = true
                     } else {
-                        Bio.authenticate { success in
+                        Biometrics.authenticate { success in
                             self.isUnlocked = success
                         }
                     }
@@ -171,7 +170,7 @@ public struct EnterPinView: View {
                 Button(action: {
                     // Activate face ID
                     print("\(type(of: self)).face_id_button_pressed")
-                    Bio.authenticate { success in
+                    Biometrics.authenticate { success in
                         if success {
                             self.isUnlocked = success
                         } else {
@@ -270,11 +269,11 @@ public struct EnterPinView: View {
             let enteredCode = getEnteredCode()
             if enteredCode == passcode && fourth != "" {
                 print("\(type(of: self)).correct_passcode_entered")
-                haptics.success()
+                haptics.feedback(.success)
                 isUnlocked = true
             } else if enteredCode.count == 4 {
                 print("\(type(of: self)).wrong_passcode_entered: \(passcode)")
-                haptics.error()
+                haptics.feedback(.error)
                 // animate circles to shake
                 withAnimation(.default) {
                     self.attempts += 1
@@ -298,13 +297,13 @@ public struct EnterPinView: View {
                     if tempCode != secondEnteredCode {
                         // Passcodes don't match
                         // Show alert and start over
-                        haptics.error()
+                        haptics.feedback(.error)
                         clearEnteredCode()
                         tempCode = ""
                         alert = wrongPinAlert
                     } else {
                         // Both passcodes match
-                        haptics.success()
+                        haptics.feedback(.success)
                         isUnlocked = true
                         passcode = secondEnteredCode
                         isCreatingPasscode = false
