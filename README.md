@@ -53,7 +53,7 @@ import KGViews
 
 
 ### Bar Sliders
-![Sliders Screenshot](https://github.com/kevingreen22/KGViews/tree//developer/readMe_resources/bar_sliders.gif)
+![Sliders Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/bar_sliders.gif)
 #### Example
 
 ```swift
