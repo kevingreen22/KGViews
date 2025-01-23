@@ -53,7 +53,7 @@ import KGViews
 
 
 ### Bar Sliders
-![Sliders Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/bar_sliders.gif)
+![Sliders Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/bar_sliders.gif)
 #### Example
 
 ```swift
@@ -66,7 +66,7 @@ HSlider(value: $valueH, minValue: 0, maxValue: 1)
 
 
 ### Button Loaders & Styles
-![Button Loaders & Styles Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/button_loader_and_styles.gif)
+![Button Loaders & Styles Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/button_loader_and_styles.gif)
 
 #### Example
 Can be used as a modifier or a view. They have slightly different visuals.
@@ -90,7 +90,7 @@ ButtonWithLoader {
 
 
 ### Close Button
-![Close Button Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/close_button.gif)
+![Close Button Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/close_button.gif)
 
 #### Example
 Can be used as a modifier or a view. Will also automatically dismiss a presented view via PresentationMode / Dismiss(). A closure is provided, eg. to toggle a bool, etc.
@@ -109,7 +109,7 @@ Text("Close button")
 ```
 
 ### EnterPinView
-<img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/enter_pin_view.png' height="625">
+<img src='https://github.com/kevingreen22/KGViews/readMe_resources/enter_pin_view.png' height="625">
 
 #### Example
 A stand alone view that allows for a pin creation and usage before proceding through app navigation. Biometrics and haptics included.
@@ -120,7 +120,7 @@ EnterPinView(isUnlocked: $isUnlocked, accentColor: .blue)
 
 
 ### Image with Default
-<img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/image_with_default.png' height="625">
+<img src='https://github.com/kevingreen22/KGViews/readMe_resources/image_with_default.png' height="625">
 
 #### Example
 
@@ -135,7 +135,7 @@ Image(uiimage: nil) <-- Most likely you'll use an optional image here (i.e. UIIm
 
 
 ### Segmented Picker with Images
-![Segmented Picker with Images Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/segmented_with_image.gif)
+![Segmented Picker with Images Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/segmented_with_image.gif)
 
 #### Example
 Shown here in a full struct as to show the state variable and the initialization of the segments.
@@ -155,7 +155,7 @@ struct ExampleView: View {
 
 
 ### Real Blur
-<img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/real_blur.png' height="625">
+<img src='https://github.com/kevingreen22/KGViews/readMe_resources/real_blur.png' height="625">
 
 #### Example
 This example offsets & frames the blur view so it is easier to visualize.
@@ -173,7 +173,7 @@ ZStack {
 
 
 ### Rounded Corner
-<img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/rounded_corner.png' height="625">
+<img src='https://github.com/kevingreen22/KGViews/readMe_resources/rounded_corner.png' height="625">
 
 #### Example
 Can be used as a modifier or as a view.
@@ -196,7 +196,7 @@ VStack {
 
 
 ### Search Bar
-![Search Bar Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/search_bar.gif)
+![Search Bar Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/search_bar.gif)
 
 #### Example
 The search bar has been added in to a navigation view for a better visual.
@@ -219,7 +219,7 @@ NavigationView {
 
 | Portrait | Landscape |
 |-|-|
-| ![Signature View Portrait Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_portrait.gif) | ![Signature View Landscape Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/signature_view_landscape.gif) |
+| ![Signature View Portrait Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/signature_view_portrait.gif) | ![Signature View Landscape Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/signature_view_landscape.gif) |
 
 #### Example
 The SignatureView can also be embedded into any stack/container.
@@ -233,7 +233,7 @@ SignatureView(disableUserInteraction: .constant(false), showColorPicker: true, o
 
 
 ### Smart Async Image
-![Smart Async Image Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/smart_async_image.gif)
+![Smart Async Image Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/smart_async_image.gif)
 
 #### Example
 Self explanitory. The url here is just for example sake. It fetches a random photo from an API to show the purpose of the what the view is doing.
@@ -245,7 +245,7 @@ SmartAsyncImage(urlString: "https://picsum.photos/200")
 
 
 ### Smooth Drag
-![Smooth Drag Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/smooth_drag.gif)
+![Smooth Drag Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/smooth_drag.gif)
 
 #### Example
 This drag gesture uses the .update method of DragGesture to create a smooth drag feel without a laggy or jumpy effect. Should be accompanied with a state variable & an offset modifier as all gestures need.
@@ -260,7 +260,7 @@ Rectangle()
 
 
 ### Specialty Text Fields
-<img src='https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/text_fields.png' height="625">
+<img src='https://github.com/kevingreen22/KGViews/readMe_resources/text_fields.png' height="625">
 
 #### Example
 This API contains TextFieldStyles for pure customization, along with a "visual validate" method. This method not only validates the text in the field, but it also visually shows whether-or-not it is a valid-input in real time.
@@ -302,7 +302,7 @@ fileprivate struct TextFields_DemoView: View {
 
 
 ### Sticky Header
-![Sticky Header Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/sticky_header.gif)
+![Sticky Header Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/sticky_header.gif)
 
 #### Example
 Just another sticky header image that scales when scrolled.
@@ -323,7 +323,7 @@ Just another sticky header image that scales when scrolled.
 
 
 ### Triangle with Rounded Corners
-![Triangle with Rounded Corners Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/triangle_rounded_corner.gif)
+![Triangle with Rounded Corners Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/triangle_rounded_corner.gif)
 
 #### Example
 A triangle shape (missing from SwiftUI's shapes API). Initializers for optional rounded corners, either all or individually. As well as a corner radius.
@@ -343,7 +343,7 @@ Triangle(cornerRadius: 20, on: corners!)
 
 
 ### Paging Indicator
-![Paging Indicator Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/paging_indicator.gif)
+![Paging Indicator Screenshot](https://github.com/kevingreen22/KGViews/readMe_resources/paging_indicator.gif)
 
 #### Example
 A custom paging indicator with an animating effect on the current page indicator.
