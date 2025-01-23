@@ -48,7 +48,7 @@ import KGViews
 - [Specialty Text Fields](#specialty-text-fields)
 - [Sticky Header](#sticky-header)
 - [Triangle with Rounded Corners](#triangle-rounded-corners)
-- [PagingIndicator](#paging-indicator)
+- [Paging Indicator](#paging-indicator)
 
 
 
@@ -342,7 +342,7 @@ Triangle(cornerRadius: 20, on: corners!)
 ```
 
 
-### PagingIndicator
+### Paging Indicator
 ![Paging Indicator Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/paging_indicator.gif)
 
 #### Example
