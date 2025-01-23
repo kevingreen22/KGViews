@@ -48,6 +48,7 @@ import KGViews
 - [Specialty Text Fields](#specialty-text-fields)
 - [Sticky Header](#sticky-header)
 - [Triangle with Rounded Corners](#triangle-rounded-corners)
+- [PagingIndicator](#paging-indicator)
 
 
 
@@ -339,3 +340,31 @@ Triangle(cornerRadius: 20, on: corners!)
     .frame(width: 300, height: 300)
 
 ```
+
+
+### PagingIndicator
+![Paging Indicator Screenshot](https://github.com/kevingreen22/KGViews/blob/developer/readMe_resources/paging_indicator.gif)
+
+#### Example
+A custom paging indicator with an animating effect on the current page indicator.
+
+```swift
+    var body: some View {
+        VStack {
+            Spacer()
+            Button("Next Page") {
+                if currentPage < pageCount {
+                    currentPage += 1
+                } else {
+                    currentPage = 1
+                }
+            }.buttonStyle(.borderedProminent)
+            Spacer()
+            
+            PagingIndicator(currentPage: $currentPage, pageCount: pageCount) <---- PAGING INDICATORS HERE
+        }
+    }
+}
+```
+
+
