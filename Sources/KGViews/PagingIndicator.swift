@@ -29,8 +29,8 @@ public struct PagingIndicator: View {
         return width
     }
     
-    public init(currentPage: Int, pageCount: Int, activeTint: Color, inactiveTint: Color) {
-        self.currentPage = currentPage
+    public init(currentPage: Binding<Int>, pageCount: Int, activeTint: Color = .accentColor, inactiveTint: Color = .accentColor.opacity(0.15)) {
+        _currentPage = currentPage
         self.pageCount = pageCount
         self.activeTint = activeTint
         self.inactiveTint = inactiveTint
