@@ -29,6 +29,13 @@ public struct PagingIndicator: View {
         return width
     }
     
+    public init(currentPage: Int, pageCount: Int, activeTint: Color, inactiveTint: Color) {
+        self.currentPage = currentPage
+        self.pageCount = pageCount
+        self.activeTint = activeTint
+        self.inactiveTint = inactiveTint
+    }
+    
     public var body: some View {
         let segmentWidth = screenWidth/CGFloat(pageCount)
         HStack(spacing: 8) {
